@@ -1,11 +1,55 @@
+// Design tokens from ASU Boostrap library
+// @import "../node_modules/@asu-design-system/design-tokens/build/scss/_variables"; 
+// @import "media-queries";
+
+@import "ic-event-cards";
+@import "ic-single";
+@import "ic-tag";
+@import 'ic-category';
+
+// Blocks
+@import "blocks/post-group";
+@import "blocks/post-column";
+@import "blocks/calendar-grid";
+
+// Temporary
+@import "blocks/grid-links";
+
+
+.pagination span.page-link {
+    padding: .5rem 0.75rem;
+}
+
+
 /*--------------------------------------------------------------
-# Theme SASS
-- Contains styles for blocks, templates and other assets.
+3. Align left, align right, align center.
 --------------------------------------------------------------*/
+@include media-breakpoint-up($lg) {
+    figure.wp-block-image.alignleft {
+        float:left;
+        margin-inline-end: 2rem;
+        margin-inline-start: calc( ( 100% - 776px ) / 2 ) !important;
+    }
 
-@import "../src/bootstrap4-theme/sass/design-tokens/variables";
-@import 'media-queries';
+    figure.wp-block-image.alignright {
+        float:right;
+        margin-inline-end: calc( ( 100% - 776px ) / 2 ) !important;
+        margin-inline-start: 2rem;
+    }
 
-body {
-    background-color: $uds-color-base-gray-4;
+    figure.wp-block-image.aligncenter {
+        max-width: fit-content;
+        margin-inline-end: auto !important;
+        margin-inline-start: auto !important;
+    }
+
+    // The following two rules target the block editor.
+    // Both .wp-block and the .wp-block-image are present under .editor-styles-wrapper
+    figure.wp-block.wp-block-image.alignleft {
+        margin-inline-start: calc( ( 100% - 1200px ) / 2 ) !important;
+    }
+
+    figure.wp-block.wp-block-image.alignright {
+        margin-inline-end: calc( ( 100% - 1200px ) / 2 ) !important;
+    }
 }

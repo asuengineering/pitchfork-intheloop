@@ -1,0 +1,128 @@
+/*--------------------------------------------------------------
+# Inner Circle - category.php
+--------------------------------------------------------------*/
+
+@import "../node_modules/@asu-design-system/design-tokens/build/scss/_variables";
+@import "media-queries";
+
+/*--------------------------------------------------------------
+1. Mobile
+--------------------------------------------------------------*/
+.archive.category {
+
+    .entry-header {
+        display: block;
+        padding: 0;
+
+        .entry-title {
+            border-bottom: 0;
+        }
+    }
+
+    aside {
+        display: none;
+    }
+
+    .archive-loop article {
+        margin-bottom: $uds-size-spacing-4;
+        padding-bottom: $uds-size-spacing-4;
+        border-bottom: 1px solid $uds-color-base-gray-3;
+    }
+
+    span.page-link {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .ic-post-columns {
+        margin-top: $uds-size-spacing-2;
+        row-gap: $uds-size-spacing-6;
+    }
+
+    .entry-footer {
+        display: inline-block;
+
+        svg {
+            margin-right: $uds-size-spacing-1;
+            // color:$uds-color-base-gray-6;
+        }
+
+        svg.fa-clock,
+        svg.fa-map-marker-alt {
+            margin-left: $uds-size-spacing-3;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+2. Desktop
+--------------------------------------------------------------*/
+@include media-breakpoint-up($md) {
+    .archive.category {
+
+        // Space between hero and the following container.
+        div[class^=uds-hero] {
+
+            &+.container {
+                margin-top: $uds-size-spacing-8;
+            }
+        }
+
+        .category-header {
+            padding-top: 4rem;
+
+            &+.container {
+                margin-top: $uds-size-spacing-8;
+            }
+        }
+
+        // Adds space between the two content columns on desktop.
+        .archive-loop {
+            padding-right: $uds-size-spacing-8;
+        }
+
+        // Display calendar widget
+        aside {
+            display: block;
+        }
+    }
+}
+
+
+
+/*--------------------------------------------------------------
+3. Calendar
+   - UDS Calendar component only renders the mobile view at a mobile
+   viewport size. Including the mobile rules here with a class declaration 
+   to force this to render mobile-only in the col-md-3 placeholder.
+--------------------------------------------------------------*/
+
+#calendar.force-mobile {
+    .calendar-grid {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+
+        .heading {
+            border-bottom: 1px solid $uds-color-base-gray-5;
+            padding-bottom: $uds-size-spacing-1;
+
+            &.desktop {
+                display: none;
+            }
+
+            &.mobile {
+                display: grid;
+            }
+        }
+
+        .body {
+            border: unset;
+
+            .calendar-item {
+                padding: $uds-size-spacing-2 $uds-size-spacing-1 $uds-size-spacing-1;
+                border: unset;
+            }
+        }
+    }
+}

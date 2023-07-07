@@ -1,0 +1,110 @@
+{
+    "key": "group_619e841fc1c6f",
+    "title": "IC: Categories, Additional Info",
+    "fields": [
+        {
+            "key": "field_619e842ac5fa1",
+            "label": "Hero background image",
+            "name": "ic_category_hero_bg",
+            "type": "image",
+            "instructions": "Select the hero image. The tag name and description will be featured in the overlay text. Without a description, you'll get a small hero (256px). With a description, you'll get a medium hero (512px).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_619e8cb384f37",
+            "label": "Hero text color",
+            "name": "ic_category_text_color",
+            "type": "true_false",
+            "instructions": "The overlay text in the hero can be either dark or light text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Light",
+            "ui_off_text": "Dark"
+        },
+        {
+            "key": "field_619e852cc5fa2",
+            "label": "Associated tags",
+            "name": "ic_category_associated_tags",
+            "type": "taxonomy",
+            "instructions": "The category page features a section of \"related\" tags at the bottom. Please select two or three tags to display in this section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_tag",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_61b1447857de1",
+            "label": "How many stories per tag?",
+            "name": "ic_category_associated_tags_count",
+            "type": "number",
+            "instructions": "How many stories should we feature for each tag?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 2,
+            "max": 8,
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1639087060
+}

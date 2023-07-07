@@ -1,0 +1,85 @@
+{
+    "key": "group_6094316005379",
+    "title": "IC: Location Details",
+    "fields": [
+        {
+            "key": "field_60943242e0405",
+            "label": "Building details",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Each term should be the abbreviation of a building on campus.\r\nTerms should NOT contain a reference to an actual room number within that building.",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_60943168e0404",
+            "label": "Map URL",
+            "name": "ic_locationtax_map_url",
+            "type": "url",
+            "instructions": "Add the URL to the map of the building here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_609432ede0406",
+            "label": "Campus",
+            "name": "ic_locationtax_campus",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "tempe": "Tempe",
+                "poly": "Polytechnic",
+                "downtown": "Downtown",
+                "west": "West",
+                "virtual": "Online\/Virtual"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "tempe",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "event_location"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Additional fields for the custom Location taxonomy for events.",
+    "modified": 1621616761,
+    "local_file": "\/var\/www\/html\/wp-content\/themes\/UDS-InnerCircle\/acf-json\/group_6094316005379.json"
+}

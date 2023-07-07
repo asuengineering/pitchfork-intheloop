@@ -1,0 +1,197 @@
+/*--------------------------------------------------------------
+# Inner Circle Calendar Grid  & Layout
+
+1. Layout
+2. Calendar Grid styles
+3. Event Preview/Details
+--------------------------------------------------------------*/
+
+#calendar-wrapper.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-row-gap: $uds-size-spacing-4;
+}
+
+#calendar {
+    grid-row: 1;
+}
+
+#event-preview {
+    display:none;
+}
+
+@include media-breakpoint-up($md) {
+    #event-preview {
+        display:block;
+        grid-row:2;
+    }
+}
+
+
+@include media-breakpoint-up($lg) {
+    #calendar-wrapper.grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 84px 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    #calendar {
+        grid-row: 1 / span 2;
+        grid-column: 1;
+    }
+
+    #event-preview {
+        display:block;
+        grid-row: 2;
+        grid-column: 2;
+    }
+}
+
+/*--------------------------------------------------------------
+2. Calendar Grid styles
+--------------------------------------------------------------*/
+
+// Toolbar styles
+#calendar .fc-header-toolbar {
+
+    flex-direction: column;
+    align-items:flex-start;
+
+    .fc-button {
+        background-color: #8c1d40;
+        border-color: #8c1d40;
+        border-radius: 6400px;
+        font-size: .875rem;
+        padding: .5rem 1rem;
+    }
+
+    .fc-button-group {
+        font-size: .875rem;
+        .fc-button:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding-left:1rem;
+        }
+        .fc-button:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding-right:1rem;
+        }
+    }
+
+    .fc-toolbar-title{ 
+        margin-bottom:1rem;
+    }
+}
+
+@include media-breakpoint-up($lg) {
+
+    #calendar .fc-header-toolbar {
+
+        flex-direction: row;
+        align-items: center;
+
+        .fc-button {
+            font-size: 1rem;
+        }
+        .fc-button-group {
+            font-size: 1rem;
+        }
+
+        .fc-toolbar-title {
+            margin-bottom: $uds-size-spacing-2;
+        }
+    }
+}
+
+// Grid View
+.fc#calendar .fc-daygrid {
+    .fc-scrollgrid tbody {
+        background-color:#ffffff;
+    }
+
+    // Column headers at the top of the grid.
+    .fc-col-header { 
+        th {
+            text-align:left;
+            background-color: #fafafa;
+            // border-color: #fafafa;
+        }
+
+        .fc-col-header-cell-cushion {
+            color:#191919;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:400;
+        }
+    }
+    // styling of the numbers in the grid.
+    .fc-daygrid-day-top {
+        flex-direction: row;
+        a {
+            text-decoration: none;
+            color: #191919;
+        }
+    }
+
+    .fc-day-today {
+        background-color: rgba(255,198,39,.15);
+    }
+}
+
+
+/*--------------------------------------------------------------
+3. Event Preview
+--------------------------------------------------------------*/
+#event-preview {
+
+    .post-title {
+        margin: $uds-size-spacing-6 $uds-size-spacing-4;
+        position:relative;
+
+        &:after {
+            content:"Post title";
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.5rem;
+            letter-spacing: -.015rem;
+            box-shadow: -0.15em 0 0 #191919, 0.15em 0 0 #191919;
+            padding-left: .15em;
+            padding-right: .15em;
+            background: #191919;
+            color: #fafafa;
+            position: absolute;
+            top: -2rem;
+            margin-bottom:1rem;
+        }
+    }
+
+    .event-details {
+        background-color: $uds-color-base-gray-1;
+        padding: $uds-size-spacing-6;
+        border: 1px solid $uds-color-base-gray-2;
+
+        h4 {
+            margin-top:0;
+        }
+
+        .cal-link {
+            font-size:14px;
+            color:$uds-color-base-gray-5;
+            margin-right: $uds-size-spacing-2;
+        }
+    }
+
+    svg.svg-inline--fa {
+        margin-right:1rem;
+    }
+}
+
+@include media-breakpoint-up($lg) {
+    #event-preview .event-details {
+        margin-left: -1px; // Remove left border.
+    }
+}
