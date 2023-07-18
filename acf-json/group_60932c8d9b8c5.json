@@ -1,45 +1,45 @@
 {
-    "key": "group_60932c8d9b8c5",
-    "title": "IC: Attached Flyer",
-    "fields": [
-        {
-            "key": "field_60932c9fa73b4",
-            "label": "Upload or select a PDF flyer for the event.",
-            "name": "ic_attached_file",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "pdf, doc, docx, odt, xls, xlsx, ods, ppt, pptx"
-        }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "side",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "Upload a document to a post. Is displayed as a download link and thumbnail at the bottom.",
-    "show_in_rest": 0,
-    "modified": 1667497064
+	"key": "group_60932c8d9b8c5",
+	"title": "Attached Flyer",
+	"fields": [
+		{
+			"key": "field_60932c9fa73b4",
+			"label": "Upload or select a PDF flyer for the event.",
+			"name": "ic_attached_file",
+			"aria-label": "",
+			"type": "file",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"library": "all",
+			"min_size": "",
+			"max_size": "",
+			"mime_types": "pdf, doc, docx, odt, xls, xlsx, ods, ppt, pptx"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "post"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "side",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "Upload a document to a post. Is displayed as a download link and thumbnail at the bottom.",
+	"show_in_rest": 0,
+	"modified": 1667497064
 }
