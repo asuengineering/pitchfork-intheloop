@@ -6,6 +6,7 @@
             "key": "field_6093127e5b065",
             "label": "Event Entry",
             "name": "ic_event_meta_entry",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "Enter one or more sets of event details for this post. Event sections can be added to the post content with a dedicated block.",
             "required": 0,
@@ -20,11 +21,13 @@
             "max": 0,
             "layout": "block",
             "button_label": "Add Event",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_61392fd45bd35",
                     "label": "Titles and Links",
                     "name": "",
+                    "aria-label": "",
                     "type": "tab",
                     "instructions": "",
                     "required": 0,
@@ -35,65 +38,73 @@
                         "id": ""
                     },
                     "placement": "top",
-                    "endpoint": 0
+                    "endpoint": 0,
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_609310575b062",
                     "label": "Event title",
                     "name": "ic_event_meta_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "The main event title. Displays on the calendar grid.",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "35",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
+                    "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_6093106f5b063",
                     "label": "Event subtitle",
                     "name": "ic_event_meta_subtitle",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "Displays as plain text below the event title. Use as a subtitle or additional descriptive text.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "35",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
                     "maxlength": "",
                     "rows": 2,
-                    "new_lines": ""
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_609311105b064",
                     "label": "Event Link",
                     "name": "ic_event_meta_link",
+                    "aria-label": "",
                     "type": "link",
                     "instructions": "Displays as a text link. Include if there is \"more to explore\" beyond the Inner Circle post.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "20",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "return_format": "array",
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_6139300d5bd36",
                     "label": "Dates",
                     "name": "",
+                    "aria-label": "",
                     "type": "tab",
                     "instructions": "",
                     "required": 0,
@@ -104,12 +115,14 @@
                         "id": ""
                     },
                     "placement": "top",
-                    "endpoint": 0
+                    "endpoint": 0,
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_60931d4bfbba9",
                     "label": "Display Options",
                     "name": "ic_event_meta_display",
+                    "aria-label": "",
                     "type": "radio",
                     "instructions": "How should we display the event dates within this card?",
                     "required": 1,
@@ -130,12 +143,14 @@
                     "default_value": "",
                     "layout": "vertical",
                     "return_format": "value",
-                    "save_other_choice": 0
+                    "save_other_choice": 0,
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_60930de85b05f",
                     "label": "Start date\/time",
                     "name": "ic_event_meta_start_dt",
+                    "aria-label": "",
                     "type": "date_time_picker",
                     "instructions": "Enter the start date\/time.",
                     "required": 0,
@@ -147,12 +162,14 @@
                     },
                     "display_format": "m\/d\/Y g:i a",
                     "return_format": "Y-m-d H:i:s",
-                    "first_day": 0
+                    "first_day": 0,
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_60930e835b060",
                     "label": "End date\/time",
                     "name": "ic_event_meta_end_dt",
+                    "aria-label": "",
                     "type": "date_time_picker",
                     "instructions": "Enter the end date\/time.",
                     "required": 0,
@@ -164,12 +181,14 @@
                     },
                     "display_format": "m\/d\/Y g:i a",
                     "return_format": "Y-m-d H:i:s",
-                    "first_day": 0
+                    "first_day": 0,
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_613931ce8c4af",
                     "label": "Location",
                     "name": "",
+                    "aria-label": "",
                     "type": "tab",
                     "instructions": "",
                     "required": 0,
@@ -180,12 +199,14 @@
                         "id": ""
                     },
                     "placement": "top",
-                    "endpoint": 0
+                    "endpoint": 0,
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_609436a646343",
                     "label": "Building",
                     "name": "ic_event_meta_building",
+                    "aria-label": "",
                     "type": "taxonomy",
                     "instructions": "Use the term \"online\" for events without a physical location.<br\/>\r\nDon't see your building listed? Leave this blank and just use the room field to describe the location.",
                     "required": 0,
@@ -202,12 +223,14 @@
                     "save_terms": 0,
                     "load_terms": 0,
                     "return_format": "object",
-                    "multiple": 0
+                    "multiple": 0,
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_609437a446344",
                     "label": "Room",
                     "name": "ic_event_meta_room",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "Indicate the room number. Leave blank for \"online\" events.",
                     "required": 0,
@@ -221,12 +244,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_613930405bd37",
                     "label": "Agenda",
                     "name": "",
+                    "aria-label": "",
                     "type": "tab",
                     "instructions": "",
                     "required": 0,
@@ -245,12 +270,14 @@
                         "id": ""
                     },
                     "placement": "top",
-                    "endpoint": 0
+                    "endpoint": 0,
+                    "parent_repeater": "field_6093127e5b065"
                 },
                 {
                     "key": "field_60930f995b061",
                     "label": "Small agenda",
                     "name": "ic_event_meta_agenda",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "Optionally include a small piece of text immediately after the start date\/time of an event. Useful for a small event egenda.",
                     "required": 0,
@@ -264,7 +291,8 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": 3,
-                    "new_lines": "br"
+                    "new_lines": "br",
+                    "parent_repeater": "field_6093127e5b065"
                 }
             ]
         }
@@ -287,5 +315,5 @@
     "active": true,
     "description": "Stores event related information per post. Powers the calendar.",
     "show_in_rest": 0,
-    "modified": 1666217955
+    "modified": 1689711660
 }
