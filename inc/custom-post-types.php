@@ -44,7 +44,7 @@ function innercircle_add_location_taxonomy() {
 		'show_tagcloud'              => false,
 		'show_in_rest'               => true,
 	);
-	register_taxonomy( 'event_location', array( 'post' ), $args );
+	register_taxonomy( 'event_location', array( '' ), $args );
 
 }
 add_action( 'init', 'innercircle_add_location_taxonomy', 0 );
