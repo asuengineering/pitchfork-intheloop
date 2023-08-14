@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * Contains additional markup for event information related to Inner Circle. 
+ * Contains additional markup for event information related to Inner Circle.
  *
  * @package pitchfork-innercircle
  */
@@ -22,34 +22,31 @@ get_header();
 		the_post();
 
 		get_template_part( 'templates-global/global-banner' );
-		
+
 		?>
+
 		<section id="single-hero">
 			<div class="title-wrap">
 				<?php the_title( '<h1 class="article entry-title">', '</h1>' ); ?>
 			</div>
 			<div class="tag-wrap">
 				<p class="meta entry-meta"><?php echo pitchfork_posted_on(); ?></p>
-				<?php innercircle_print_tags(); ?>
-			</div>
-			<div class="category-wrap">
-				<span class="fa-solid fa-folder-open"></span>
-				<?php innercircle_print_categories(); ?>
+				<?php innercircle_print_post_meta(); ?>
 			</div>
 		</section>
-		
+
 		<section <?php post_class('container content-wrap'); ?> id="post-<?php the_ID(); ?>">
-			
+
 			<div class="row">
 
 				<div class="col-lg-8">
-					<?php 
+					<?php
 					if ( has_post_thumbnail() ) {
 						echo '<figure class="wp-block-image wp-post-image size-large is-style-drop-shadow">';
 						the_post_thumbnail('large', array( 'class' => 'img-fluid' ));
 						echo '</figure>';
 					}
-					
+
 					the_content();
 
 					get_template_part( 'templates-global/event-attachment' );
@@ -58,18 +55,20 @@ get_header();
 
 				<aside class="col-lg-4">
 					<?php
-					
+
+					innercircle_print_sidebar_post_meta();
+
 					// Count the number of event cards attached to this post.
 					$event_count = 0;
 					$events = get_field('ic_event_meta_entry');
 					if (is_array($events)) {
 						$event_count = count($events);
 					}
-					
+
 					do_action('qm/debug', $event_count);
 
 					if ( $event_count > 0 ) {
-						
+
 						echo '<section id="events">';
 
 						if ( $event_count <= 3 ) {
@@ -85,7 +84,7 @@ get_header();
 						echo '</section>';
 
 					}
-					
+
 					?>
 				</aside>
 
@@ -104,9 +103,9 @@ get_header();
 				?>
 
 				<footer class="entry-footer">
-				
+
 					<?php
-					// Edit post link, scraped from parent tempalte-tags.php
+					// Edit post link, scraped from parent template-tags.php
 					edit_post_link(
 						sprintf(
 							/* translators: %s: Name of current post */
@@ -122,7 +121,7 @@ get_header();
 			</div><!-- end .row -->
 		</section><!-- #post-## -->
 
-		<?php 
+		<?php
 		if ( $event_count > 3 ) {
 			echo '<section id="event-breakout">';
 			echo '<div class="container"><div class="row"><div class="col-md-12">';

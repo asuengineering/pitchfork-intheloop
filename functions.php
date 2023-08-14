@@ -45,13 +45,13 @@ add_action( 'after_setup_theme', 'uds_wp_gutenberg_child_css' );
 // ===============================================
 require get_stylesheet_directory() . '/inc/custom-post-types.php';
 require get_stylesheet_directory() . '/inc/acf-register.php';
-require get_stylesheet_directory() . '/inc/font-awesome-pro.php';
+// require get_stylesheet_directory() . '/inc/font-awesome-pro.php';
 require get_stylesheet_directory() . '/inc/event-line.php';
 require get_stylesheet_directory() . '/inc/uds-calendar-dates.php';
 require get_stylesheet_directory() . '/inc/calendar-date-validation.php';
 require get_stylesheet_directory() . '/inc/rest-api-extensions.php';
 
-/** 
+/**
  * Pull just the categories from a post.
  * Format as card tags.
  */
@@ -67,20 +67,83 @@ function innercircle_print_categories() {
 	}
 }
 
- /** 
+ /**
+ * Compile taxonomy info from post, print for single.php
+ * Format as links with a specific icon for each taxonomy type.
+ */
+function innercircle_print_post_meta() {
+
+	global $post;
+
+	// Default category taxonomy
+	// Using the generic get_term_list function for consistency.
+	$category_list = get_the_term_list( $post->ID, 'category', '', ', ');
+	if ( $category_list ) {
+		printf( '<div class="tags-links"><span class="fa-regular fa-folder-open fa-fw"></span>%s</div>', $category_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	// Custom taxonomy: Audience
+	$audience_list = get_the_term_list( $post->ID, 'audience', '', ', ');
+	if ( $audience_list ) {
+		printf( '<div class="tags-links"><span class="fa-regular fa-person-sign fa-fw"></span>%s</div>', $audience_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	// Custom taxonomy: Organization
+	$organization_list = get_the_term_list( $post->ID, 'organization', '', ', ');
+	if ( $organization_list ) {
+		printf( '<div class="tags-links"><span class="fa-solid fa-thumbtack fa-fw"></span>%s</div>', $organization_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	// Custom taxonomy: Series
+	$series_list = get_the_term_list( $post->ID, 'series', '', ', ');
+	if ( $series_list ) {
+		printf( '<div class="tags-links"><span class="fa-regular fa-list fa-fw"></span>%s</div>', $series_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+}
+
+ /**
+ * Compile taxonomy info from post, print for single.php
+ * Format as links with a specific icon for each taxonomy type.
+ */
+function innercircle_print_sidebar_post_meta() {
+
+	global $post;
+
+	// Custom taxonomy: Audience
+	$audience_list = get_the_term_list( $post->ID, 'audience', '', ', ');
+	if ( $audience_list ) {
+		printf( '<div class="tags-links"><h3><span class="fa-regular fa-person-sign fa-fw"></span>Audience</h3>%s</div>', $audience_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	// Custom taxonomy: Organization
+	$organization_list = get_the_term_list( $post->ID, 'organization', '', ', ');
+	if ( $organization_list ) {
+		printf( '<div class="tags-links"><h3><span class="fa-solid fa-thumbtack fa-fw"></span>Organization</h3>%s</div>', $organization_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	// Custom taxonomy: Series
+	$series_list = get_the_term_list( $post->ID, 'series', '', ', ');
+	if ( $series_list ) {
+		printf( '<div class="tags-links"><h3><span class="fa-regular fa-list fa-fw"></span>Series</h3>%s</div>', $series_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+}
+
+ /**
  * Pull just the tags from a post.
  * Format as links with a tag icon.
  */
 function innercircle_print_tags() {
-/* translators: used between list items, there is a space after the comma */
-	$tags_list = get_the_tag_list( '', esc_html__( ', ', 'uds-wordpress-theme' ) );
-	if ( $tags_list ) {
-		/* translators: %s: Tags of current post */
-		printf( '<div class="tags-links"><span class="fas fa-tags" title="Tags"></span>%s</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'uds-wordpress-theme' ) );
+		if ( $tags_list ) {
+			/* translators: %s: Tags of current post */
+			printf( '<div class="category-links"><span class="fa-solid fa-folder-open"></span>%s</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
 	}
-}
 
-/** 
+/**
  * Combine the two functions above for single.php
  */
 function innercircle_print_categories_tags() {
@@ -90,7 +153,7 @@ function innercircle_print_categories_tags() {
 
 /**
  * Hides the display of the default taxonomy description field.
- * 
+ *
  * @link https://wordpress.stackexchange.com/questions/253124/remove-category-description-textarea
  */
 
