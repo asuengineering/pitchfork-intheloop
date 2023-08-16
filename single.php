@@ -31,7 +31,6 @@ get_header();
 			</div>
 			<div class="tag-wrap">
 				<p class="meta entry-meta"><?php echo pitchfork_posted_on(); ?></p>
-				<?php innercircle_print_post_meta(); ?>
 			</div>
 		</section>
 
@@ -54,9 +53,15 @@ get_header();
 				</div>
 
 				<aside class="col-lg-4">
+					<section id="sidebar-post-meta">
+						<h3><span class="highlight-gold">Post Details</span></h3>
+						<div class="card card-ic-event">
+							<div class="card-details">
+								<?php innercircle_print_sidebar_post_meta(); ?>
+							</div>
+						</div>
+					</section>
 					<?php
-
-					innercircle_print_sidebar_post_meta();
 
 					// Count the number of event cards attached to this post.
 					$event_count = 0;

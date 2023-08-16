@@ -45,7 +45,6 @@ add_action( 'after_setup_theme', 'uds_wp_gutenberg_child_css' );
 // ===============================================
 require get_stylesheet_directory() . '/inc/custom-post-types.php';
 require get_stylesheet_directory() . '/inc/acf-register.php';
-// require get_stylesheet_directory() . '/inc/font-awesome-pro.php';
 require get_stylesheet_directory() . '/inc/event-line.php';
 require get_stylesheet_directory() . '/inc/uds-calendar-dates.php';
 require get_stylesheet_directory() . '/inc/calendar-date-validation.php';
@@ -110,22 +109,29 @@ function innercircle_print_sidebar_post_meta() {
 
 	global $post;
 
+	// Default category taxonomy
+	// Using the generic get_term_list function for consistency.
+	$category_list = get_the_term_list( $post->ID, 'category', '', ', ');
+	if ( $category_list ) {
+		printf( '<div class="tags-links"><h4><span class="fa-regular fa-folder-open fa-fw"></span>Category</h4>%s</div>', $category_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
 	// Custom taxonomy: Audience
 	$audience_list = get_the_term_list( $post->ID, 'audience', '', ', ');
 	if ( $audience_list ) {
-		printf( '<div class="tags-links"><h3><span class="fa-regular fa-person-sign fa-fw"></span>Audience</h3>%s</div>', $audience_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<div class="tags-links"><h4><span class="fa-regular fa-person-sign fa-fw"></span>Audience</h4>%s</div>', $audience_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	// Custom taxonomy: Organization
 	$organization_list = get_the_term_list( $post->ID, 'organization', '', ', ');
 	if ( $organization_list ) {
-		printf( '<div class="tags-links"><h3><span class="fa-solid fa-thumbtack fa-fw"></span>Organization</h3>%s</div>', $organization_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<div class="tags-links"><h4><span class="fa-solid fa-thumbtack fa-fw"></span>Organization</h4>%s</div>', $organization_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	// Custom taxonomy: Series
 	$series_list = get_the_term_list( $post->ID, 'series', '', ', ');
 	if ( $series_list ) {
-		printf( '<div class="tags-links"><h3><span class="fa-regular fa-list fa-fw"></span>Series</h3>%s</div>', $series_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<div class="tags-links"><h4><span class="fa-regular fa-list fa-fw"></span>Series</h4>%s</div>', $series_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 }
