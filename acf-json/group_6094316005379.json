@@ -1,11 +1,12 @@
 {
     "key": "group_6094316005379",
-    "title": "IC: Location Details",
+    "title": "ITL: Location Details",
     "fields": [
         {
             "key": "field_60943242e0405",
             "label": "Building details",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -23,6 +24,7 @@
             "key": "field_60943168e0404",
             "label": "Map URL",
             "name": "ic_locationtax_map_url",
+            "aria-label": "",
             "type": "url",
             "instructions": "Add the URL to the map of the building here.",
             "required": 0,
@@ -39,6 +41,7 @@
             "key": "field_609432ede0406",
             "label": "Campus",
             "name": "ic_locationtax_campus",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -80,6 +83,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Additional fields for the custom Location taxonomy for events.",
-    "modified": 1621616761,
-    "local_file": "\/var\/www\/html\/wp-content\/themes\/UDS-InnerCircle\/acf-json\/group_6094316005379.json"
+    "show_in_rest": 0,
+    "modified": 1692226746
 }

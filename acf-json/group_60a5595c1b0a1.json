@@ -1,11 +1,12 @@
 {
     "key": "group_60a5595c1b0a1",
-    "title": "IC: Tags, Additional Info",
+    "title": "ITL: Archive Page: Additional Info",
     "fields": [
         {
             "key": "field_60a838fd72e99",
             "label": "Description \/ CTA",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -22,6 +23,7 @@
             "key": "field_60a559b8a29a5",
             "label": "Description",
             "name": "ic_tag_description",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -41,6 +43,7 @@
             "key": "field_60a592c086302",
             "label": "Call to Action Button",
             "name": "ic_tag_cta_button",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -56,6 +59,7 @@
             "key": "field_60a8382072e97",
             "label": "Call to Action Button Color",
             "name": "ic_tag_cta_button_color",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 1,
@@ -82,6 +86,7 @@
             "key": "field_60a8392772e9a",
             "label": "Featured Image \/ Contact Info",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -98,6 +103,7 @@
             "key": "field_60a55a4dfe8e0",
             "label": "Featured Image",
             "name": "ic_tag_featured_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "Featured images should be formated 16:9, please.",
             "required": 0,
@@ -122,6 +128,7 @@
             "key": "field_60a55bb2fe8e3",
             "label": "Additional Contact Details",
             "name": "ic_tag_contact_details",
+            "aria-label": "",
             "type": "clone",
             "instructions": "Add optional contact information for this event series at the bottom of the listing.",
             "required": 0,
@@ -143,6 +150,7 @@
             "key": "field_60a55e4081e53",
             "label": "Additional Contact Image",
             "name": "ic_tag_contact_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "Include a circle image next to the contact details",
             "required": 0,
@@ -169,7 +177,22 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "post_tag"
+                "value": "category"
+            },
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "audience"
+            },
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "organization"
+            },
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "series"
             }
         ]
     ],
@@ -181,5 +204,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Additional information needed to create a fancy \"tag\" landing page.",
-    "modified": 1630009689
+    "show_in_rest": 0,
+    "modified": 1692226619
 }

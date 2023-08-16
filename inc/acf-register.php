@@ -1,7 +1,7 @@
 <?php
 /**
  * Additional functions for Advanced Custom Fields.
- * 
+ *
  * Contents:
  *   - Load path for ACF groups from the parent.
  *   - Register custom blocks for the theme.
@@ -23,68 +23,22 @@ function innercircle_parent_theme_field_groups( $paths ) {
 }
 
 /**
- * Create save point for the child theme's ACF groups.
+ * Create a save point for specifc JSON files for the the child theme's ACF groups.
+ *
+ * Key list
+ * - Archive page meta: group_60a5595c1b0a1
+ * - Location taxonomy meta: group_6094316005379
+ * - Event Meta: group_60930ddbd7be0
+ * - Attached flyer: group_60932c8d9b8c5
  *
  * @return $paths
  */
-add_filter( 'acf/settings/save_json', 'innercircle_child_theme_field_groups' );
 function innercircle_child_theme_field_groups( $path ) {
     $path = get_stylesheet_directory() . '/acf-json';
     return $path;
 }
-
-
-/**
- * Register additional custom blocks for the theme.
- */
-add_action('acf/init', 'innercircle_acf_init_block_types');
-function innercircle_acf_init_block_types() {
-
-    // Check function exists.
-    if( function_exists('acf_register_block_type') ) {
-
-		// IC Post Group
-		acf_register_block_type(array(
-            'name'              => 'ic-post-group',
-            'title'             => __( 'IC: Post Group', 'uds-wordpress-theme' ), 
-            'description'       => __( 'A block to display stories from Inner Circle', 'uds-wordpress-theme' ), // description the user will see.
-            'icon'              => 'star-filled', 
-            'render_template'   => 'templates-blocks/post-group.php',
-            'category'          => 'inner-circle',
-            'keywords'          => array( 'post', 'group' , 'content-section' ),
-            'supports'          => array(
-                'align' => false,
-            ),
-            'mode'              => 'preview',
-            'example'  => array(
-                'attributes' => array(
-                    'mode' => 'preview',
-                    'data' => array(
-                    ),
-                ),
-            ),
-        ));
-
-        // IC Post Column
-		acf_register_block_type(array(
-            'name'              => 'ic-post-column',
-            'title'             => __( 'IC: Post Column', 'uds-wordpress-theme' ), 
-            'description'       => __( 'A block to display a column of stories from Inner Circle', 'uds-wordpress-theme' ), // description the user will see.
-            'icon'              => 'star-filled', 
-            'render_template'   => 'templates-blocks/post-column.php',
-            'category'          => 'inner-circle',
-            'keywords'          => array( 'post', 'column' , 'content-section' ),
-            'supports'          => array(
-                'align' => false,
-            ),
-            'mode'              => 'preview',
-            'example'  => array(
-                'attributes' => array(
-                    'mode' => 'preview',
-                    'data' => array(
-                    ),
-                ),
-            ),
-        ));
-    }
-}
+add_filter( 'acf/settings/save_json/key=group_60a5595c1b0a1', 'innercircle_child_theme_field_groups' );
+add_filter( 'acf/settings/save_json/key=group_619e841fc1c6f', 'innercircle_child_theme_field_groups' );
+add_filter( 'acf/settings/save_json/key=group_6094316005379', 'innercircle_child_theme_field_groups' );
+add_filter( 'acf/settings/save_json/key=group_60930ddbd7be0', 'innercircle_child_theme_field_groups' );
+add_filter( 'acf/settings/save_json/key=group_60932c8d9b8c5', 'innercircle_child_theme_field_groups' );

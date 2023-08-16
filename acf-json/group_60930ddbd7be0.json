@@ -1,6 +1,6 @@
 {
     "key": "group_60930ddbd7be0",
-    "title": "IC: Event Meta",
+    "title": "ITL: Event Meta",
     "fields": [
         {
             "key": "field_6093127e5b065",
@@ -224,7 +224,8 @@
                     "load_terms": 0,
                     "return_format": "object",
                     "multiple": 0,
-                    "parent_repeater": "field_6093127e5b065"
+                    "parent_repeater": "field_6093127e5b065",
+                    "bidirectional_target": []
                 },
                 {
                     "key": "field_609437a446344",
@@ -315,5 +316,5 @@
     "active": true,
     "description": "Stores event related information per post. Powers the calendar.",
     "show_in_rest": 0,
-    "modified": 1689711660
+    "modified": 1692226768
 }
