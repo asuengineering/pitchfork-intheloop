@@ -9,13 +9,14 @@
 defined( 'ABSPATH' ) || exit;
 
 $term = get_queried_object();
+$taxonomy = get_taxonomy($term->taxonomy);
+$taxonomy_single_name = $taxonomy->labels->singular_name;
 
 $description = get_field('ic_tag_description', $term);
 $link = get_field('ic_tag_cta_button', $term);
 $button_color = get_field('ic_tag_cta_button_color' , $term);
 $featured_image = get_field( 'ic_tag_featured_image', $term);
 
-do_action("qm/debug", $term);
 ?>
 
 <section id="tag-hero">
@@ -23,7 +24,7 @@ do_action("qm/debug", $term);
         <div class="row">
             <div class="col-md-7">
                 <?php
-                echo '<h3><span class="highlight-gold">Tag:</span></h3>';
+                echo '<h3><span class="highlight-gold">' . $taxonomy_single_name . ':</span></h3>';
                 the_archive_title( '<h1 class="page-title">', '</h1>' );
 
                 echo '<div class="term-description">' . wp_kses_post($description) . '</div>';

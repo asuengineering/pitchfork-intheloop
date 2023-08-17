@@ -3,12 +3,12 @@
     "title": "ITL: Archive Page: Additional Info",
     "fields": [
         {
-            "key": "field_60a838fd72e99",
-            "label": "Description \/ CTA",
-            "name": "",
+            "key": "field_60a55a4dfe8e0",
+            "label": "Featured Image",
+            "name": "ic_tag_featured_image",
             "aria-label": "",
-            "type": "tab",
-            "instructions": "",
+            "type": "image",
+            "instructions": "Featured images should be formated 16:9, please.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,8 +16,16 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_60a559b8a29a5",
@@ -35,9 +43,9 @@
             },
             "default_value": "",
             "tabs": "visual",
-            "toolbar": "uds_wp_simple",
+            "toolbar": "full",
             "media_upload": 0,
-            "delay": 1
+            "delay": 0
         },
         {
             "key": "field_60a592c086302",
@@ -81,95 +89,6 @@
             "layout": "vertical",
             "return_format": "value",
             "save_other_choice": 0
-        },
-        {
-            "key": "field_60a8392772e9a",
-            "label": "Featured Image \/ Contact Info",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_60a55a4dfe8e0",
-            "label": "Featured Image",
-            "name": "ic_tag_featured_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Featured images should be formated 16:9, please.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_60a55bb2fe8e3",
-            "label": "Additional Contact Details",
-            "name": "ic_tag_contact_details",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "Add optional contact information for this event series at the bottom of the listing.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_6089d6189b18e"
-            ],
-            "display": "group",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_60a55e4081e53",
-            "label": "Additional Contact Image",
-            "name": "ic_tag_contact_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Include a circle image next to the contact details",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
         }
     ],
     "location": [
@@ -178,17 +97,23 @@
                 "param": "taxonomy",
                 "operator": "==",
                 "value": "category"
-            },
+            }
+        ],
+        [
             {
                 "param": "taxonomy",
                 "operator": "==",
                 "value": "audience"
-            },
+            }
+        ],
+        [
             {
                 "param": "taxonomy",
                 "operator": "==",
                 "value": "organization"
-            },
+            }
+        ],
+        [
             {
                 "param": "taxonomy",
                 "operator": "==",
@@ -205,5 +130,5 @@
     "active": true,
     "description": "Additional information needed to create a fancy \"tag\" landing page.",
     "show_in_rest": 0,
-    "modified": 1692226619
+    "modified": 1692299711
 }
