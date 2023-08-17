@@ -1,6 +1,6 @@
 <?php
 /**
- * In the loop template for displaying categories.
+ * In the loop template for displaying most custom post taxonomies.
  *
  * @package pitchfork-innercircle
  */

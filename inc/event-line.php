@@ -11,7 +11,7 @@
 function innercircle_event_line($post, $include_category) {
 
     $output = '';
-    
+
     $eventmeta = get_field('ic_event_meta_entry', $post);
 
     // If eventmeta is empty, the array won't be countable. Produces a warning.
@@ -22,7 +22,7 @@ function innercircle_event_line($post, $include_category) {
     if (count($eventmeta) > 1 ) :
 
         $output .= '<div class="event-meta"><span class="far fa-calendar"></span>Multiple dates and times</div>';
-        
+
         if ( $include_category ) {
             $categories_list = preg_replace( '/<a /', '<a class="btn btn-tag btn-tag-alt-white"', get_the_category_list( ' ' ) );
             $output .= '<div class="card-tags">' . $categories_list . '</div>';
@@ -49,19 +49,20 @@ function innercircle_event_line($post, $include_category) {
             $end_time = str_replace(array('am','pm'),array('a.m.','p.m.'),date('g:i a', strtotime($end_dt)));
 
             // Location details. If/then statement handles unset select box from the UI.
-            $building = $location['building'];
+			$building = $location['building'] ?? '';
+
             if (empty($building)) {
                 $building_name = '';
             } else {
                 $building_name = $building->name;
             }
-            
+
             if (!empty($location)){
                 $location_string = '<span class="fas fa-map-marker-alt"></span>'. $building_name . ' ' . $location['room'];
             } else {
                 $location_string = '';
             }
-            
+
             $eventmeta = '';
 
             // Output depending on the type of event displayed.
@@ -81,7 +82,7 @@ function innercircle_event_line($post, $include_category) {
                 // Handles 'standard' === $display and any errors.
                 $eventmeta .= '<span class="far fa-calendar"></span>' . $start_date . '<span class="far fa-clock"></span>' . $start_time . ' - ' . $end_time;
             }
-            
+
             $output = '<div class="event-meta">' . $eventmeta . $location_string . '</div>';
 
             if ( $include_category ) {
@@ -90,7 +91,7 @@ function innercircle_event_line($post, $include_category) {
             } else {
                 // No category string desired.
             }
-            
+
         // End loop.
         endwhile;
 
