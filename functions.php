@@ -78,13 +78,13 @@ function innercircle_print_post_meta() {
 	// Using the generic get_term_list function for consistency.
 	$category_list = get_the_term_list( $post->ID, 'category', '', ', ');
 	if ( $category_list ) {
-		printf( '<div class="tags-links"><span class="fa-regular fa-folder-open fa-fw"></span>%s</div>', $category_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<div class="tags-links"><span class="fa-regular fa-folder-open fa-fw"></span>Category: %s</div>', $category_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	// Custom taxonomy: Audience
 	$audience_list = get_the_term_list( $post->ID, 'audience', '', ', ');
 	if ( $audience_list ) {
-		printf( '<div class="tags-links"><span class="fa-regular fa-person-sign fa-fw"></span>%s</div>', $audience_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<div class="tags-links"><span class="fa-regular fa-person-sign fa-fw"></span>Audience: %s</div>', $audience_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	// Custom taxonomy: Organization
