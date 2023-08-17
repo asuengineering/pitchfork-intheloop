@@ -49,18 +49,17 @@ get_header();
 					the_content();
 
 					get_template_part( 'templates-global/event-attachment' );
+
 					?>
+
+					<footer class="post-meta">
+						<h3><span class="highlight-black">Tags</span></h3>
+						<?php innercircle_print_post_meta(); ?>
+					</footer>
+
 				</div>
 
 				<aside class="col-lg-4">
-					<section id="sidebar-post-meta">
-						<h3><span class="highlight-gold">Post Details</span></h3>
-						<div class="card card-ic-event">
-							<div class="card-details">
-								<?php innercircle_print_sidebar_post_meta(); ?>
-							</div>
-						</div>
-					</section>
 					<?php
 
 					// Count the number of event cards attached to this post.

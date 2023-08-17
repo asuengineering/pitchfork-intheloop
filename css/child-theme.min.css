@@ -23,8 +23,7 @@
 .downloads img.attachment-icon{padding:1.5rem;border:1px solid #e8e8e8}
 .downloads .media-body p:first-child{font-weight:700}
 .wp-block-image.wp-post-image{margin-bottom:3rem}
-#sidebar-post-meta .card{background-color:#fafafa}
-#sidebar-post-meta .card-ic-event .card-details{padding-top:1rem;padding-bottom:2rem}
+.post-meta svg{margin-right:.5rem}
 .archive.tag #tag-hero .term-description{font-size:1.25rem;padding-right:2rem}
 .archive.tag #tag-hero img{display:none}
 .archive.tag #tag-hero .container{border-bottom:1px solid #e8e8e8;padding-top:2rem;padding-bottom:2rem;margin-bottom:2rem}
@@ -88,8 +87,6 @@
 main>.container.content-wrap{padding-left:0;padding-right:0}
 .downloads{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .downloads img{margin-right:1.5rem}
-#sidebar-post-meta{padding:0 0 0 2rem}
-#sidebar-post-meta>h3{margin-top:0}
 .archive.tag #tag-hero .container{border-bottom:2px solid #e8e8e8;padding-top:4rem;padding-bottom:4rem;margin-bottom:4rem}
 .archive.tag #tag-hero img{display:block;margin-top:1rem}
 .archive.tag article{padding-bottom:4rem;margin-bottom:2rem}

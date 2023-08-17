@@ -201,24 +201,8 @@
 /*--------------------------------------------------------------
 5. Sidebar Post Meta Card
 --------------------------------------------------------------*/
-#sidebar-post-meta {
-	.card {
-		background-color: $uds-color-base-gray-1;
-	}
-
-	.card-ic-event .card-details {
-		padding-top: 1rem;
-		padding-bottom: 2rem;
-	}
-}
-
-// Desktop
-@include media-breakpoint-up($lg) {
-	#sidebar-post-meta {
-		padding: 0 0 0 2rem;
-
-		>h3 {
-			margin-top: 0; // Header at the top of the sidebar
-		}
+.post-meta {
+	svg {
+		margin-right: $uds-size-spacing-1;
 	}
 }
