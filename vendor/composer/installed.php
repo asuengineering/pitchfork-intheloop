@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'asu-ke-web-services/uds-wordpress-child-theme',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '18d931254b63280d12982b0e540776f6f47d2ded',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => '13a5ff065def862ef142b120d9aea12c69d8f79d',
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'asu-ke-web-services/uds-wordpress-child-theme' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '18d931254b63280d12982b0e540776f6f47d2ded',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '13a5ff065def862ef142b120d9aea12c69d8f79d',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -88,7 +88,7 @@
         'roave/security-advisories' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'e5af9ce18347a240cb120454a8c2665c5b162aa1',
+            'reference' => '705b497810d1620aaac8779e6b82ef3d266fc6c1',
             'type' => 'metapackage',
             'install_path' => NULL,
             'aliases' => array(),
@@ -107,9 +107,9 @@
             ),
         ),
         'spatie/calendar-links' => array(
-            'pretty_version' => '1.8.5',
-            'version' => '1.8.5.0',
-            'reference' => 'd6f6c5e7ff916e2a55e2160d4db4f15875cb6e07',
+            'pretty_version' => '1.8.0',
+            'version' => '1.8.0.0',
+            'reference' => '654fc0174e6279539b9bf0abdc3339e34c5286d7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/calendar-links',
             'aliases' => array(),
