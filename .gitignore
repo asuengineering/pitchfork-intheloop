@@ -58,8 +58,6 @@ Thumbs.db
 .sass-cache
 bower_components
 node_modules
-dist
-dist-product
 npm-debug.log
 
 # Composer assets, directly consumed #
