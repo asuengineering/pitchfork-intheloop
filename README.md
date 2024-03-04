@@ -34,6 +34,12 @@ A small script to lint the codebase is also included via `composer`. It utilizes
 
 ## Release Notes
 
+### Version 1.0
+
+- FIX: Adjusted style for `single.php` based on incoming code changes in Pitchfdork v2.1.
+- CHANGE: SASS and JS compile process now works with [Gulp WP](https://github.com/cr0ybot/gulp-wp) to mirror the functionality of the parent theme.
+- FIX: Removed several unused files from child theme that were left over from intiial build modeled on Inner Circle.
+
 ### Version 0.4
 
 - CHANGE: Downgrade composer library for `spatie/calendar-links` to a version which supports PHP 7.4. The downgrade is due to the lack of PHP 8 support for a separate plugin that's running within the site. PHP 8 breaks Edit Flow but was required for the `spatie/calendar-links` library at versions greater than the current v8.0.
