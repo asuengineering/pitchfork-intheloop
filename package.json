@@ -1,0 +1,14 @@
+{
+  "name": "pitchfork-intheloop",
+  "version": "0.4.0",
+  "description": "In the Loop theme for ASU Engineering. A child of the Pitchfork theme.",
+  "repository": "asuengineering/pitchfork-intheloop",
+  "main": ".eslintrc.js",
+  "author": "ASUEngineering",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "@asu/unity-bootstrap-theme": "^1.9.4",
+    "gulp-wp": "^0.6.9"
+  }
+}
