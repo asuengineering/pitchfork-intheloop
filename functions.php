@@ -14,31 +14,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue child scripts and styles.
  */
-function uds_wordpress_child_scripts() {
+function pitchfork_inthelooop_child_scripts() {
 	// Get the theme data.
 	$the_theme     = wp_get_theme();
 	$theme_version = $the_theme->get( 'Version' );
 
-	$css_child_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . '/css/child-theme.min.css' );
-	wp_enqueue_style( 'pitchfork-child-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array( 'pitchfork-styles' ), $css_child_version );
+	$css_child_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . '/dist/css/child-theme.css' );
+	wp_enqueue_style( 'pitchfork-child-styles', get_stylesheet_directory_uri() . '/dist/css/child-theme.css', array( 'pitchfork-styles' ), $css_child_version );
 	wp_enqueue_style( 'pitchfork-fullcalendar-styles', 'https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css', array(), null );
-
-	$js_child_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . '/js/child-theme.js' );
-	wp_enqueue_script( 'pitchfork-child', get_stylesheet_directory_uri() . '/js/child-theme.js', array(), $js_child_version );
 	wp_enqueue_script( 'pitchfork-fullcalendar', 'https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js', array(), null, false );
-
 }
-add_action( 'wp_enqueue_scripts', 'uds_wordpress_child_scripts' );
+add_action( 'wp_enqueue_scripts', 'pitchfork_inthelooop_child_scripts' );
 
 /**
  * Enqueue the child-theme.css into the editor.
  */
-function uds_wp_gutenberg_child_css() {
+function pitchfork_inthelooop_add_editor_styles() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'css/child-theme.min.css' );
+	add_editor_style( 'dist/css/child-theme.css' );
 
 }
-add_action( 'after_setup_theme', 'uds_wp_gutenberg_child_css' );
+add_action( 'after_setup_theme', 'pitchfork_inthelooop_add_editor_styles' );
 
 
 // Other included partials for functions.php.
