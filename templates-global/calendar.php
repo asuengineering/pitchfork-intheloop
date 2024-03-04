@@ -42,7 +42,7 @@ function pass_events_to_fullcalendar() {
 
             // var_dump(the_permalink());
 
-            // Loop through rows within the post 
+            // Loop through rows within the post
             while ( have_rows('ic_event_meta_entry') ) : the_row();
 
                 $title = get_sub_field('ic_event_meta_title');
@@ -74,7 +74,7 @@ function pass_events_to_fullcalendar() {
                     $event->{"allDay"} = false;
 
                 } else {
-                    
+
                     // Standard date display. Includes the times.
                     $event->{"start"} = $start_dt;
                     $event->{"end"} = $end_dt;
@@ -102,14 +102,14 @@ function pass_events_to_fullcalendar() {
 
                 // Builds Add to Calendar links from Spatie\CalendarLinks\Link
                 // Check for a valid start date, which may be excluded by the "deadline" date type.
-                
+
                 $cal_from = date_create_from_format('Y-m-d H:i:s', $start_dt);
                 $cal_to = date_create_from_format('Y-m-d H:i:s', $end_dt);
 
                 // Builds Add to Calendar links from Spatie\CalendarLinks\Link
                 $cal_from = date_create_from_format('Y-m-d H:i:s', $start_dt);
                 $cal_to = date_create_from_format('Y-m-d H:i:s', $end_dt);
-                
+
                 $valid_dates = false;
                 $valid_dates = validate_add_to_calendar_dates( $cal_from, $cal_to );
                 if ($valid_dates) {
@@ -121,7 +121,7 @@ function pass_events_to_fullcalendar() {
                     $event->{"google_cal_link"} = $cal_link->google();
 
                 } else {
-                    
+
                     // No event links added to the array.
                 }
 
@@ -129,7 +129,7 @@ function pass_events_to_fullcalendar() {
 
             // End get_rows loop.
             endwhile;
-        
+
         // End wp_query loop.
         endwhile;
 
@@ -140,8 +140,8 @@ function pass_events_to_fullcalendar() {
     // Get the theme data.
 	$the_theme     = wp_get_theme();
 	$theme_version = $the_theme->get( 'Version' );
-    $js_child_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . '/js/fullcalendar-init.js' );
-	wp_enqueue_script( 'pitchfork-innercircle-fullcalendar-init', get_stylesheet_directory_uri() . '/js/fullcalendar-init.js', array( 'pitchfork-fullcalendar' ), $js_child_version );
+    $js_child_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . '/dist/js/fullcalendar-init.js' );
+	wp_enqueue_script( 'pitchfork-innercircle-fullcalendar-init', get_stylesheet_directory_uri() . '/dist/js/fullcalendar-init.js', array( 'pitchfork-fullcalendar' ), $js_child_version );
     wp_add_inline_script( 'pitchfork-innercircle-fullcalendar-init', 'const CALDATA = ' . json_encode( array(
         'events' => $event_array,
     ) ), 'before' );
