@@ -8,7 +8,7 @@
 #events .card-ic-event,
 #sidebar-post-meta .card-ic-event,
 #event-breakout .card-ic-event {
-	margin-bottom: $uds-size-spacing-4;
+	// margin-bottom: $uds-size-spacing-4;
 
 	.card-header {
 		padding: $uds-size-spacing-2 $uds-size-spacing-3 0 $uds-size-spacing-3;
@@ -48,9 +48,22 @@
 	}
 
 	.event-card-container {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: 1fr;
+		display: flex;
+		flex-direction: column;
 		gap: 2rem;
+	}
+}
+
+@include media-breakpoint-up($md) {
+	#event-breakout .event-card-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+	}
+}
+
+@include media-breakpoint-up($lg) {
+	#event-breakout .event-card-container {
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
