@@ -37,6 +37,7 @@ A small script to lint the codebase is also included via `composer`. It utilizes
 ### Version 1.0
 
 - FIX: Adjusted style for `single.php` based on incoming code changes in Pitchfdork v2.1.
+- FIX: Adjust mobile display of `#event-breakout` section within `single.php` template.
 - CHANGE: SASS and JS compile process now works with [Gulp WP](https://github.com/cr0ybot/gulp-wp) to mirror the functionality of the parent theme.
 - FIX: Removed several unused files from child theme that were left over from intiial build modeled on Inner Circle.
 
